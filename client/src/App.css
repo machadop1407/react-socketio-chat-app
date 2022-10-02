@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   background: #FFD29D;
-  color: #212121;
+  color: #C51B29;
   font-family: "Comfortaa", normal;
   display: grid;
   place-items: center;
@@ -12,6 +12,7 @@ body {
   padding: 0%;
 }
 @import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
 
 .selector {
   align-self: center;
@@ -65,6 +66,7 @@ button:hover {
   -o-transition: all 0.2s ease-in-out;
 }
 
+
 .chat-window {
   width: 300px;
   height: 420px;
@@ -90,7 +92,7 @@ button:hover {
 
 .chat-window .chat-body {
   height: calc(450px - (45px + 70px));
-  border: 1px solid #263238;
+  border: 1px solid #343a26;
   background: #fff;
 
   position: relative;
@@ -182,7 +184,7 @@ button:hover {
   border-right: 1px dotted #918450;
 
   outline: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Oxygen", normal;
 }
 
 .chat-window .chat-footer button {
