@@ -25,14 +25,17 @@ function Chat({ socket, username, room }) {
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
-      setMessageList((list) => [...list, data]);
+      console.log(username, 'received', data)
+      if(!messageList.includes(data)) {
+        setMessageList((list) => [...list, data]);
+      }
     });
   }, [socket]);
 
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <p>Live Chat</p>
+        <p>{room}</p>
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">

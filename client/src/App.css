@@ -1,9 +1,10 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background: #fff;
-  color: #212121;
-  font-family: "Open Sans", sans-serif;
+  background: #FFD29D;
+  background-image: linear-gradient(135deg, #fd988a 0%, #ffbc9d 50%, #ffc787 100%);
+  color: #C51B29;
+  font-family: "Comfortaa", normal;
   display: grid;
   place-items: center;
 }
@@ -11,7 +12,99 @@ body {
   margin: 0%;
   padding: 0%;
 }
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.icon { display: none; }
+.hasicon { position: relative; }
+.hasicon .icon {
+    position: relative;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100px; 
+}
+
+#slide {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  background-image: linear-gradient(135deg, rgb(230, 40, 56) 0%, rgb(248, 94, 0) 50%, rgb(255, 148, 95) 100%);
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+  
+@keyframes slide-in {
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(0%); }
+}
+  
+@keyframes slide-out {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(-100%); }
+}
+
+
+
+.username-input {
+  display: block;
+  width: 90%;
+  padding: 1em;
+  border-radius: 5px;
+  /* border: 1px solid #525252; */
+  border: none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  transition: all 200ms;
+
+}
+
+.username-input:focus {
+  outline: none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.selector {
+  align-self: center;
+}
 
 .joinChatContainer {
   display: flex;
@@ -27,28 +120,58 @@ body {
   width: 210px;
   height: 40px;
   margin: 7px;
-  border: 2px solid #43a047;
+  border: 2px solid #FFB563;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
 }
 
-.joinChatContainer button {
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  75% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.button-main {
   width: 225px;
   height: 50px;
-  margin: 7px;
+  display: block;
+  align-self: center;
+  margin: 1em auto;
   border: none;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
-  background: #43a047;
+  background: #C51B29;
+  background-image: linear-gradient(135deg, rgb(230, 40, 56) 0%, rgb(248, 94, 0) 50%, rgb(255, 148, 95) 100%);
   color: #fff;
   cursor: pointer;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  /* animation: fadeIn 1.5s; */
+}
+  .sub {
+    width: 150px;
+  }
+
+.home-heading {
+  animation: fadeIn 1.5s;
+  font-size: 60px;
 }
 
 .joinChatContainer button:hover {
-  background: #2e7d32;
+  background: #FFB563;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
+
+.button:hover {
+  background: #FFB563;
+  -moz-transition: all 0.5 ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
 
 .chat-window {
   width: 300px;
@@ -61,7 +184,8 @@ body {
 .chat-window .chat-header {
   height: 45px;
   border-radius: 6px;
-  background: #263238;
+  background: #918450;
+  background-image: linear-gradient(135deg, rgb(230, 40, 56) 0%, rgb(248, 94, 0) 50%, rgb(255, 148, 95) 100%);
   position: relative;
   cursor: pointer;
 }
@@ -75,7 +199,7 @@ body {
 
 .chat-window .chat-body {
   height: calc(450px - (45px + 70px));
-  border: 1px solid #263238;
+  border: 1px solid #7d7e7b;
   background: #fff;
 
   position: relative;
@@ -101,7 +225,7 @@ body {
   height: auto;
   min-height: 40px;
   max-width: 120px;
-  background-color: #43a047;
+  background-color: #F85E00;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -114,29 +238,29 @@ body {
   word-break: break-word;
 }
 
-#you {
+#other {
   justify-content: flex-start;
 }
 
-#you .message-content {
+#other .message-content {
   justify-content: flex-start;
 }
 
-#you .message-meta {
+#other .message-meta {
   justify-content: flex-start;
   margin-left: 5px;
 }
 
-#other {
+#you {
   justify-content: flex-end;
 }
 
-#other .message-content {
+#you .message-content {
   justify-content: flex-end;
-  background-color: cornflowerblue;
+  background-color: #FFB563;
 }
 
-#other .message-meta {
+#you .message-meta {
   justify-content: flex-end;
   margin-right: 5px;
 }
@@ -153,7 +277,7 @@ body {
 
 .chat-window .chat-footer {
   height: 40px;
-  border: 1px solid #263238;
+  border: 1px solid #918450;
   border-top: none;
   display: flex;
 }
@@ -164,10 +288,10 @@ body {
   border: 0;
   padding: 0 0.7em;
   font-size: 1em;
-  border-right: 1px dotted #607d8b;
+  border-right: 1px dotted #918450;
 
   outline: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Oxygen", normal;
 }
 
 .chat-window .chat-footer button {
@@ -180,12 +304,37 @@ body {
   background: transparent;
   outline: none;
   font-size: 25px;
-  color: lightgray;
+  color: #F85E00;
 }
 
 .chat-window .chat-footer button:hover {
-  color: #43a047;
+  color: #FFB563;
 }
 .hide {
   opacity: 0 !important;
 }
+
+
+.custom-select {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.selector {
+  width: 80%;
+  height: 50px;
+  align-self: center;
+  margin: auto;
+  display: block;
+  text-align: center;
+  font-family: "Comfortaa", normal;
+  background-image: linear-gradient(135deg, rgba(253, 109, 121, 0.5) 0%, rgba(250, 138, 68, 0.5) 50%, rgba(245, 142, 87, 0.5) 100%);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+/* .airport-selection {
+
+} */
