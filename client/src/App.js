@@ -2,18 +2,8 @@ import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
-
-import Vue from 'vue'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-
-// Import Bootstrap and BootstrapVue CSS files (order is important)
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-// Make BootstrapVue available throughout your project
-Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+import logo_image from "./images/logo_wbg.png";
+import logo_anim from './images/animated_logo.gif';
 
 const socket = io.connect("http://localhost:3001");
 
@@ -33,10 +23,9 @@ function App() {
     setPageState(pageState - 1);
   }
 
-  const onSetDeparture = (event) => {
-    console.log(event);
+  const onSetDeparture = async (event) => {
+    console.log(event.target.value);
     setDeparture(event.target.value);
-    console.log(departure);
   }
 
   const componentDidUpdate = (prevProps) => {
@@ -58,7 +47,7 @@ function App() {
         <div className="joinChatContainer">
           <h2>Tindair</h2> 
           <div>
-             <img src={'./images/logo_wbg.png'} alt="this is logo image" />
+             <img src={logo_image} alt="this is logo image" />
           </div>
           <button class="button-main" onClick={incrementPageState}>Get Started</button>
         </div>
@@ -75,7 +64,7 @@ function App() {
       ) : pageState == 3 ? (
           <div>
           <h3>Select your arrival airport</h3>
-          <select class="form-control" className="selector" autocomplete="on">
+          <select class="form-control" className="selector">
             <option value="IAH">IAH</option>
             <option value="LAX">LAX</option>
             <option value="EAS">EAS</option>
