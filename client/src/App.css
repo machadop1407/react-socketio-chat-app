@@ -13,6 +13,10 @@ body {
 }
 @import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700");
 
+.selector {
+  align-self: center;
+}
+
 .joinChatContainer {
   display: flex;
   flex-direction: column;
@@ -42,6 +46,7 @@ body {
   padding: 5px;
   font-size: 16px;
   background: #C51B29;
+  background-image: linear-gradient(135deg, rgb(197, 27, 41) 0%, rgb(248, 94, 0) 50%, rgb(255, 148, 95) 100%);
   color: #fff;
   cursor: pointer;
 }

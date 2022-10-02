@@ -3,6 +3,18 @@ import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
+import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
 const socket = io.connect("http://localhost:3001");
 
 function App() {
@@ -23,11 +35,18 @@ function App() {
     <div className="App">
       { pageState === 1 ? (
         <div className="joinChatContainer">
-          <h3>Tindair</h3> 
+          <h2>Tindair</h2> 
           <button onClick={incrementPageState}>Get Started</button>
         </div>
         ) : pageState === 2 ? (
-        <div>hey</div>
+          <div>
+          <h3>Select your airport</h3>
+          <select className="selector" autocomplete="on">
+            <option value="IAH">IAH</option>
+            <option value="LAX">LAX</option>
+            <option value="EAS">EAS</option>
+          </select>
+        </div>
         // <Chat socket={socket} username={username} room={room} />
       ) : (<div> final div </div>)}
     </div>
