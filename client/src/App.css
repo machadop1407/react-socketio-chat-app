@@ -37,7 +37,7 @@ body {
   font-size: 16px;
 }
 
-.joinChatContainer button {
+.button-main {
   width: 225px;
   height: 50px;
   margin: 7px;
@@ -46,13 +46,23 @@ body {
   padding: 5px;
   font-size: 16px;
   background: #C51B29;
-  background-image: linear-gradient(135deg, rgb(197, 27, 41) 0%, rgb(248, 94, 0) 50%, rgb(255, 148, 95) 100%);
+  background-image: linear-gradient(135deg, rgb(230, 40, 56) 0%, rgb(248, 94, 0) 50%, rgb(255, 148, 95) 100%);
   color: #fff;
   cursor: pointer;
 }
 
 .joinChatContainer button:hover {
-  background: #e01829;
+  background: #FFB563;
+  -moz-transition: all 0.2 ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #FFB563;
+  -moz-transition: all 0.2 ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
 }
 
 .chat-window {
