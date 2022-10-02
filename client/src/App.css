@@ -1,9 +1,9 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: #FFD29D;
   color: #212121;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Comfortaa", normal;
   display: grid;
   place-items: center;
 }
@@ -11,7 +11,7 @@ body {
   margin: 0%;
   padding: 0%;
 }
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700");
 
 .joinChatContainer {
   display: flex;
@@ -27,7 +27,7 @@ body {
   width: 210px;
   height: 40px;
   margin: 7px;
-  border: 2px solid #43a047;
+  border: 2px solid #FFB563;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
@@ -41,13 +41,13 @@ body {
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
-  background: #43a047;
+  background: #C51B29;
   color: #fff;
   cursor: pointer;
 }
 
 .joinChatContainer button:hover {
-  background: #2e7d32;
+  background: #e01829;
 }
 
 .chat-window {
@@ -101,7 +101,7 @@ body {
   height: auto;
   min-height: 40px;
   max-width: 120px;
-  background-color: #43a047;
+  background-color: #F85E00;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -133,7 +133,7 @@ body {
 
 #other .message-content {
   justify-content: flex-end;
-  background-color: cornflowerblue;
+  background-color: #FFB563;
 }
 
 #other .message-meta {
@@ -164,7 +164,7 @@ body {
   border: 0;
   padding: 0 0.7em;
   font-size: 1em;
-  border-right: 1px dotted #607d8b;
+  border-right: 1px dotted #918450;
 
   outline: none;
   font-family: "Open Sans", sans-serif;
@@ -184,7 +184,7 @@ body {
 }
 
 .chat-window .chat-footer button:hover {
-  color: #43a047;
+  color: #FFB563;
 }
 .hide {
   opacity: 0 !important;
