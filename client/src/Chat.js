@@ -23,9 +23,26 @@ function Chat({ socket, username, room }) {
     }
   };
 
-  useEffect(() => {
+    useEffect(() => {
     socket.on("receive_message", (data) => {
-      setMessageList((list) => [...list, data]);
+      setMessageList((list) => {
+        // Check if the message is already present in the messageList
+        const messageExists = list.some((message) => {
+          return (
+            message.room === data.room &&
+            message.author === data.author &&
+            message.message === data.message &&
+            message.time === data.time
+          );
+        });
+  
+        // Add the message to the messageList only if it doesn't already exist
+        if (!messageExists) {
+          return [...list, data];
+        } else {
+          return list;
+        }
+      });
     });
   }, [socket]);
 
